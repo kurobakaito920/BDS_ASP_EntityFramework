@@ -1,0 +1,155 @@
+﻿img {
+    display: block;
+    width: 100%;
+}
+
+p {
+    margin: 0;
+    color: #707070;
+}
+
+#wrapper {
+    padding: 20px;
+}
+
+.heading {
+    color: #06158d;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .thumbnail div {
+        flex-basis: calc(100% / 2 - 20px);
+    }
+
+.article {
+    position: relative;
+    margin-top: 20px;
+}
+
+.news-content {
+    width: 70%;
+    height: 100%;
+}
+
+.news__heading {
+    color: #06158d;
+    font-weight: bold;
+}
+
+.post {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.post__img {
+    border-radius: 20px;
+    flex-basis: 25%;
+    overflow: hidden;
+}
+
+    .post__img img {
+        height: 100%;
+    }
+
+.post__content {
+    flex-basis: 71%;
+}
+
+.post__title {
+    font-weight: bold;
+}
+
+.post-info {
+    display: flex;
+    margin-top: 5px;
+}
+
+    .post-info p + p {
+        margin-left: 15px;
+    }
+
+.post-info__price {
+    color: #f00;
+    font-weight: bold;
+}
+
+.post__desc {
+    margin-top: 5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.post-utils {
+    margin-top: 10px;
+    display: flex;
+}
+
+.post-utils__user {
+    display: flex;
+    align-items: center;
+}
+
+    .post-utils__user i {
+        font-size: 30px;
+        margin-right: 5px;
+    }
+
+.post-utils__save {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+    .post-utils__save i {
+        font-size: 30px;
+        margin-right: 5px;
+        transition: all 500ms;
+    }
+
+.post-utils button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.categories {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    color: #06158d;
+    background-color: #eef6fa;
+}
+
+.categories__title {
+    color: #06158d;
+    font-weight: bold;
+}
+
+.categories__list {
+    display: flex;
+    flex-direction: column;
+}
+
+    .categories__list a {
+        margin-top: 10px;
+        color: #06158d;
+        text-decoration: none;
+    }
+
+        .categories__list a:hover {
+            text-decoration: underline;
+        }

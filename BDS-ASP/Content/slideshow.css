@@ -1,0 +1,122 @@
+﻿.bg-poster {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+    height: 400px;
+    margin: 100px auto auto auto;
+}
+
+    .bg-poster img {
+        filter: opacity(0.3) blur(3px);
+        height: 100%;
+        width: 550px;
+    }
+
+.poster--left {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 85%;
+}
+
+    .poster--left img {
+        max-width: 150%;
+        animation: left-img 3s infinite;
+        animation-direction: normal;
+    }
+
+@keyframes left-img {
+    0% {
+    }
+
+    75% {
+        position: relative;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        position: relative;
+        transform: translateX(143%);
+        opacity: 0;
+    }
+}
+
+.poster--main {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 140%;
+}
+
+    .poster--main img {
+        width: 100%;
+        box-shadow: 20px 34px 58px 10px rgba(34, 3, 3, 0.2), 0px 46px 70px 20px rgba(142, 122, 122, 0.19);
+        animation: main-img 3s infinite;
+        animation-direction: normal;
+        z-index: 1;
+    }
+
+@keyframes main-img {
+    0% {
+    }
+
+    75% {
+        position: relative;
+        transform: translateX(0);
+        width: 100%;
+        filter: opacity(1) blur(0);
+        z-index: 1;
+    }
+
+    100% {
+        position: relative;
+        transform: translateX(-71.5%);
+        width: 91%;
+        filter: opacity(0.3) blur(3px);
+        z-index: 0;
+    }
+}
+
+.poster--right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    align-content: center;
+    justify-content: right;
+    width: 85%;
+}
+
+    .poster--right img {
+        max-width: 150%;
+        animation: right-img 3s infinite;
+        animation-direction: normal;
+        z-index: 0;
+    }
+
+@keyframes right-img {
+    0% {
+        z-index: 0;
+    }
+
+    75% {
+        max-width: 150%;
+        position: relative;
+        transform: translateX(0);
+        filter: opacity(0.5) blur(1px);
+        box-shadow: 0px 0px 0px 0px rgba(34, 3, 3, 0.2), 0px 0px 0px 0px rgba(142, 122, 122, 0.19);
+        z-index: 0;
+    }
+
+    100% {
+        max-width: 165%;
+        position: relative;
+        transform: translateX(-60.5%);
+        filter: opacity(1) blur(0);
+        box-shadow: 20px 34px 58px 10px rgba(34, 3, 3, 0.2), 0px 46px 70px 20px rgba(142, 122, 122, 0.19);
+        z-index: 1;
+    }
+}

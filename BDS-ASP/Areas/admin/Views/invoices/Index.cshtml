@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BDS_ASP.Models.invoice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.export_invoice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_prices)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer.customer_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.transaction.transaction_date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.export_invoice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_prices)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer.customer_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.transaction.transaction_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.invoice_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.invoice_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.invoice_id })
+        </td>
+    </tr>
+}
+
+</table>

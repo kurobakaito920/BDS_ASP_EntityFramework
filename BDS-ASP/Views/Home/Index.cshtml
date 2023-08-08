@@ -1,0 +1,242 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="slide-show">
+    <div class="bg-poster">
+        <div class="poster--left">
+            <img src="" alt="" id="left-img">
+        </div>
+        <div class="poster--main">
+            <img src="" alt="" id="main-img">
+        </div>
+        <div class="poster--right">
+            <img src="" alt="" id="right-img">
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="outstanding">
+        <div class="text-tittle">
+            <h2>NỔI BẬT</h2>
+        </div>
+        <section id="wrapper">
+            <section class="tab">
+                <button onclick="onTabClick(0)" class="tab__item tab__item--active">Phổ biến</button>
+                <button onclick="onTabClick(1)" class="tab__item">Chung cư</button>
+                <button onclick="onTabClick(2)" class="tab__item">Nhà đất</button>
+                <button onclick="onTabClick(3)" class="tab__item">Căn hộ cao cấp</button>
+            </section>
+
+            <section id="tab-content" class="content-show">
+                <div class="content-news">
+                    <div class="news">
+                        <div class="title-news">
+                            <h5>Mới đăng</h5>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="image-news">
+                            <img src="./images/bds.png" alt="">
+                        </div>
+                        <div class="title-content-news">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Thủ đức, HCM</h5>
+                        </div>
+                        <div class="size-contact">
+                            <h5>70m2 1 tỷ 8</h5>
+                            <div class="button-contact">
+                                <button>Liên hệ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news">
+                        <div class="title-news">
+                            <h5>Mới đăng</h5>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="image-news">
+                            <img src="./images/bds.png" alt="">
+                        </div>
+                        <div class="title-content-news">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Thủ đức, HCM</h5>
+                        </div>
+                        <div class="size-contact">
+                            <h5>70m2 1 tỷ 8</h5>
+                            <div class="button-contact">
+                                <button>Liên hệ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news">
+                        <div class="title-news">
+                            <h5>Mới đăng</h5>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="image-news">
+                            <img src="./images/bds.png" alt="">
+                        </div>
+                        <div class="title-content-news">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Thủ đức, HCM</h5>
+                        </div>
+                        <div class="size-contact">
+                            <h5>70m2 1 tỷ 8</h5>
+                            <div class="button-contact">
+                                <button>Liên hệ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news">
+                        <div class="title-news">
+                            <h5>Mới đăng</h5>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="image-news">
+                            <img src="./images/bds.png" alt="">
+                        </div>
+                        <div class="title-content-news">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Thủ đức, HCM</h5>
+                        </div>
+                        <div class="size-contact">
+                            <h5>70m2 1 tỷ 8</h5>
+                            <div class="button-contact">
+                                <button>Liên hệ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="content-news">
+                    <div class="news">
+                        <div class="title-news">
+                            <h5>Mới đăng</h5>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="image-news">
+                            <img src="./images/bds.png" alt="">
+                        </div>
+                        <div class="title-content-news">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Thủ đức, HCM</h5>
+                        </div>
+                        <div class="size-contact">
+                            <h5>70m2 1 tỷ 8</h5>
+                            <div class="button-contact">
+                                <button>Liên hệ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news">
+                        <div class="title-news">
+                            <h5>Mới đăng</h5>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="image-news">
+                            <img src="./images/bds.png" alt="">
+                        </div>
+                        <div class="title-content-news">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Thủ đức, HCM</h5>
+                        </div>
+                        <div class="size-contact">
+                            <h5>70m2 1 tỷ 8</h5>
+                            <div class="button-contact">
+                                <button>Liên hệ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news">
+                        <div class="title-news">
+                            <h5>Mới đăng</h5>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="image-news">
+                            <img src="./images/bds.png" alt="">
+                        </div>
+                        <div class="title-content-news">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Thủ đức, HCM</h5>
+                        </div>
+                        <div class="size-contact">
+                            <h5>70m2 1 tỷ 8</h5>
+                            <div class="button-contact">
+                                <button>Liên hệ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news">
+                        <div class="title-news">
+                            <h5>Mới đăng</h5>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="image-news">
+                            <img src="./images/bds.png" alt="">
+                        </div>
+                        <div class="title-content-news">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Thủ đức, HCM</h5>
+                        </div>
+                        <div class="size-contact">
+                            <h5>70m2 1 tỷ 8</h5>
+                            <div class="button-contact">
+                                <button>Liên hệ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </section>
+        </section>
+    </div>
+    <div class="outstanding-news">
+        <div class="text-tittle">
+            <h2>TIN TỨC</h2>
+        </div>
+        <div class="grid-news">
+            <div class="news-content--update">
+                <div class="title-news-content">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                </div>
+                <div class="content-news--update">
+                    <p>
+                        Welcome to Burger Bliss, where we take your cravings to a whole new level! Our mouthwatering burgers are made from 100% beef and are served on freshly baked buns.
+                    </p>
+                    <img src="./images/Dau-Tu-Bat-Dong-San.jpg" alt="">
+                </div>
+            </div>
+            <div class="news-content--update">
+                <div class="title-news-content">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                </div>
+                <div class="content-news--update">
+                    <p>
+                        Welcome to Burger Bliss, where we take your cravings to a whole new level! Our mouthwatering burgers are made from 100% beef and are served on freshly baked buns.
+                    </p>
+                    <img src="./images/Dau-Tu-Bat-Dong-San.jpg" alt="">
+                </div>
+            </div>
+            <div class="news-content--update">
+                <div class="title-news-content">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                </div>
+                <div class="content-news--update">
+                    <p>
+                        Welcome to Burger Bliss, where we take your cravings to a whole new level! Our mouthwatering burgers are made from 100% beef and are served on freshly baked buns.
+                    </p>
+                    <img src="./images/Dau-Tu-Bat-Dong-San.jpg" alt="">
+                </div>
+            </div>
+            <div class="news-content--update">
+                <div class="title-news-content">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                </div>
+                <div class="content-news--update">
+                    <p>
+                        Welcome to Burger Bliss, where we take your cravings to a whole new level! Our mouthwatering burgers are made from 100% beef and are served on freshly baked buns.
+                    </p>
+                    <img src="./images/Dau-Tu-Bat-Dong-San.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

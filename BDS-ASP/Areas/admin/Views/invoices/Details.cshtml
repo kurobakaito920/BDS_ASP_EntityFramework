@@ -1,0 +1,51 @@
+﻿@model BDS_ASP.Models.invoice
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.export_invoice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.export_invoice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_prices)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_prices)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customer.customer_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer.customer_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.transaction.transaction_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.transaction.transaction_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.invoice_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

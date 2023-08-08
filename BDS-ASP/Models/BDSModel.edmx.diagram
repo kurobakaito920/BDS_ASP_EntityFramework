@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ddaf22a7f6a7422dac2495e7541a998b" Name="Diagram1">
+        <EntityTypeShape EntityType="BDSModel.category" Width="1.5" PointX="0.625" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.customer" Width="1.5" PointX="8.625" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.employee" Width="1.5" PointX="5.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.invoice" Width="1.5" PointX="8.375" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.position" Width="1.5" PointX="8.375" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.project" Width="1.5" PointX="2.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.property" Width="1.5" PointX="3.375" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.subCategory" Width="1.5" PointX="0.625" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.sysdiagram" Width="1.5" PointX="11.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSModel.transaction" Width="1.5" PointX="5.625" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="BDSModel.FK__project__categor__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__subCatego__categ__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__invoices__custom__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__transacti__custo__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__employees__posit__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__project__employe__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__transacti__emplo__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__invoices__transa__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__propertie__subCa__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSModel.FK__transacti__prope__38996AB5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

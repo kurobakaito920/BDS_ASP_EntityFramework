@@ -1,0 +1,60 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ------------------- HEADER NAVIGATOR MENU ------------------- */
+
+.navigator-header {
+    display: flex;
+    height: 134px;
+    background-color: #FDEEEE;
+}
+
+.nav-bar_logo img {
+    height: 130px;
+    width: 200px;
+    margin-left: 160px;
+}
+
+.nav-bar_option li {
+    float: left;
+    list-style-type: none;
+    padding: 45px 54px 50px 45px;
+}
+
+    .nav-bar_option li a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: #707070;
+    }
+
+.sign-in {
+    display: flex;
+    margin: 41px 0 41px 0;
+}
+
+    .sign-in i {
+        margin: 5px 20px 0 0;
+        font-size: 30px;
+    }
+
+    .sign-in .text_sign-in a {
+        line-height: 35px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #707070;
+    }
+
+#search-info {
+    margin: 40px;
+    width: 313px;
+    height: 47px;
+    border-radius: 50px;
+    padding-left: 10px;
+    font-size: 16px;
+    border: #707070 1px solid;
+}

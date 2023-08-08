@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/style.css")
+    @Styles.Render("~/Content/header.css")
+    @Styles.Render("~/Content/footer.css")
+    @Styles.Render("~/Content/slideshow.css")
+    @Styles.Render("~/Content/salehomeland.css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://kit.fontawesome.com/ddbe1d16ea.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <span class="navigator-header">
+        <div class="nav-bar_logo">
+            <img src="./images/2.jpg" alt="">
+        </div>
+        <ul class="nav-bar_option">
+            <li class="option_menu-selected">
+                <a href="./index.html">Trang chủ</a>
+            </li>
+            <li class="option_menu-selected">
+                <a>@Html.ActionLink("Nhà đất bán", "SaleHomeLand", "Home")</a>
+            </li>
+            <li class="option_menu-selected">
+                <a href="">Nhà đất cho thuê</a>
+            </li>
+            <li class="option_menu-selected">
+                <a href="">Dự án</a>
+            </li>
+        </ul>
+        <div class="sign-in">
+            <i class="far fa-user-circle"></i>
+            <div class="text_sign-in">
+                <a href="http://">Đăng nhập</a>
+            </div>
+        </div>
+        <div class="input-search">
+            <input type="search" name="Search" id="search-info" placeholder="Nhập tìm kiếm">
+        </div>
+    </span>
+    <span class="main-body">
+        @RenderBody()
+    </span>
+    <footer>
+        <div class="information">
+            <div class="title-footer">
+                <h2>
+                    Công ty</h3>
+                    <ul>
+                        <li>
+                            <a href="">Văn phòng</a>
+                        </li>
+                        <li>
+                            <a href="">Sự kiện</a>
+                        </li>
+                        <li>
+                            <a href="">Giải thưởng</a>
+                        </li>
+                        <li>
+                            <a href="">Tuyển dụng</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="title-footer">
+                <h2>
+                    Dịch vụ</h3>
+                    <ul>
+                        <li>
+                            <a href="">Công cụ thiết kế</a>
+                        </li>
+                        <li>
+                            <a href="">Công cụ Marketing</a>
+                        </li>
+                        <li>
+                            <a href="">Công cụ lập trình</a>
+                        </li>
+                        <li>
+                            <a href="">Công cụ SEO</a>
+                        </li>
+                        <li>
+                            <a href="">Hợp pháp</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="title-footer">
+                <h2>
+                    Về chúng tôi</h3>
+                    <ul>
+                        <li>
+                            <a href="">Nhiệm vụ</a>
+                        </li>
+                        <li>
+                            <a href="">Nhóm</a>
+                        </li>
+                        <li>
+                            <a href="">Quản lý</a>
+                        </li>
+                        <li>
+                            <a href="">Liên hệ</a>
+                        </li>
+                    </ul>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.460488039715!2d106.66479527590593!3d10.775999859199848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fbcdcd0f9c5%3A0x74a6ef113e58e72a!2sHUFLIT%20Protocol%20Team!5e0!3m2!1svi!2s!4v1690700972405!5m2!1svi!2s" width="750" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="content-footer">
+            <p>ⓒ2022 The Sprkl. All rights reserved.</p>
+            <div class="icon">
+                <a href="http://">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="http://">
+                    <i class="fab fa-facebook-messenger"></i>
+                </a>
+                <a href="http://">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="http://">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="~/Scripts/index.js"></script>
+    <script type="text/javascript" src="~/Scripts/scripts.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

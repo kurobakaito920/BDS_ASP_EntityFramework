@@ -1,0 +1,64 @@
+﻿@model IEnumerable<BDS_ASP.Models.property>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.property_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.priceToSell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rentCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descriptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subCategory.subCategory_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.property_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.priceToSell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rentCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subCategory.subCategory_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.property_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.property_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.property_id })
+        </td>
+    </tr>
+}
+
+</table>

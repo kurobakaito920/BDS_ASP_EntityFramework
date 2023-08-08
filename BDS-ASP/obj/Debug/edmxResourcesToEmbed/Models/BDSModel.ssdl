@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="categories">
+    <Key>
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_name" Type="nvarchar" MaxLength="225" />
+  </EntityType>
+  <EntityType Name="customers">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_name" Type="nvarchar" MaxLength="225" />
+    <Property Name="gender" Type="int" />
+    <Property Name="dateBorn" Type="nvarchar" MaxLength="225" />
+    <Property Name="customer_phone" Type="nvarchar" MaxLength="10" />
+    <Property Name="email" Type="nvarchar" MaxLength="225" />
+  </EntityType>
+  <EntityType Name="employees">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="employee_name" Type="nvarchar" MaxLength="225" />
+    <Property Name="gender" Type="int" />
+    <Property Name="employee_address" Type="nvarchar" MaxLength="225" />
+    <Property Name="phone" Type="nvarchar" MaxLength="10" />
+    <Property Name="email" Type="nvarchar" MaxLength="225" />
+    <Property Name="position_id" Type="int" />
+  </EntityType>
+  <EntityType Name="invoices">
+    <Key>
+      <PropertyRef Name="invoice_id" />
+    </Key>
+    <Property Name="invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="export_invoice" Type="nvarchar" MaxLength="225" />
+    <Property Name="total_prices" Type="int" />
+    <Property Name="transaction_id" Type="int" />
+    <Property Name="customer_id" Type="int" />
+  </EntityType>
+  <EntityType Name="positions">
+    <Key>
+      <PropertyRef Name="position_id" />
+    </Key>
+    <Property Name="position_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="position_name" Type="nvarchar" MaxLength="225" />
+  </EntityType>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="project_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="project_name" Type="nvarchar" MaxLength="225" />
+    <Property Name="timeStart" Type="nvarchar" MaxLength="225" />
+    <Property Name="timeEnd" Type="nvarchar" MaxLength="225" />
+    <Property Name="locations" Type="nvarchar" MaxLength="225" />
+    <Property Name="descriptions" Type="nvarchar" MaxLength="225" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="category_id" Type="int" />
+  </EntityType>
+  <EntityType Name="properties">
+    <Key>
+      <PropertyRef Name="property_id" />
+    </Key>
+    <Property Name="property_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="property_address" Type="nvarchar" MaxLength="225" />
+    <Property Name="area" Type="nvarchar" MaxLength="225" />
+    <Property Name="priceToSell" Type="nvarchar" MaxLength="225" />
+    <Property Name="rentCost" Type="nvarchar" MaxLength="225" />
+    <Property Name="descriptions" Type="nvarchar" MaxLength="225" />
+    <Property Name="subCategory_id" Type="int" />
+  </EntityType>
+  <EntityType Name="subCategories">
+    <Key>
+      <PropertyRef Name="subCategory_id" />
+    </Key>
+    <Property Name="subCategory_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subCategory_name" Type="nvarchar" MaxLength="225" />
+    <Property Name="category_id" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="transactions">
+    <Key>
+      <PropertyRef Name="transaction_id" />
+    </Key>
+    <Property Name="transaction_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transaction_date" Type="nvarchar" MaxLength="225" />
+    <Property Name="transaction_location" Type="nvarchar" MaxLength="225" />
+    <Property Name="transaction_prices" Type="nvarchar" MaxLength="225" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="property_id" Type="int" />
+  </EntityType>
+  <Association Name="FK__employees__posit__2D27B809">
+    <End Role="positions" Type="Self.positions" Multiplicity="0..1" />
+    <End Role="employees" Type="Self.employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="positions">
+        <PropertyRef Name="position_id" />
+      </Principal>
+      <Dependent Role="employees">
+        <PropertyRef Name="position_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__invoices__custom__3C69FB99">
+    <End Role="customers" Type="Self.customers" Multiplicity="0..1" />
+    <End Role="invoices" Type="Self.invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="invoices">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__invoices__transa__3B75D760">
+    <End Role="transactions" Type="Self.transactions" Multiplicity="0..1" />
+    <End Role="invoices" Type="Self.invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transactions">
+        <PropertyRef Name="transaction_id" />
+      </Principal>
+      <Dependent Role="invoices">
+        <PropertyRef Name="transaction_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project__categor__33D4B598">
+    <End Role="categories" Type="Self.categories" Multiplicity="0..1" />
+    <End Role="project" Type="Self.project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categories">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="project">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project__employe__32E0915F">
+    <End Role="employees" Type="Self.employees" Multiplicity="0..1" />
+    <End Role="project" Type="Self.project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="project">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__propertie__subCa__300424B4">
+    <End Role="subCategories" Type="Self.subCategories" Multiplicity="0..1" />
+    <End Role="properties" Type="Self.properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subCategories">
+        <PropertyRef Name="subCategory_id" />
+      </Principal>
+      <Dependent Role="properties">
+        <PropertyRef Name="subCategory_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__subCatego__categ__267ABA7A">
+    <End Role="categories" Type="Self.categories" Multiplicity="0..1" />
+    <End Role="subCategories" Type="Self.subCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categories">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="subCategories">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__transacti__custo__37A5467C">
+    <End Role="customers" Type="Self.customers" Multiplicity="0..1" />
+    <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__transacti__emplo__36B12243">
+    <End Role="employees" Type="Self.employees" Multiplicity="0..1" />
+    <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__transacti__prope__38996AB5">
+    <End Role="properties" Type="Self.properties" Multiplicity="0..1" />
+    <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="properties">
+        <PropertyRef Name="property_id" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="property_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDSModelStoreContainer">
+    <EntitySet Name="categories" EntityType="Self.categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="invoices" EntityType="Self.invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="positions" EntityType="Self.positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="properties" EntityType="Self.properties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subCategories" EntityType="Self.subCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transactions" EntityType="Self.transactions" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__employees__posit__2D27B809" Association="Self.FK__employees__posit__2D27B809">
+      <End Role="positions" EntitySet="positions" />
+      <End Role="employees" EntitySet="employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__invoices__custom__3C69FB99" Association="Self.FK__invoices__custom__3C69FB99">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="invoices" EntitySet="invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__invoices__transa__3B75D760" Association="Self.FK__invoices__transa__3B75D760">
+      <End Role="transactions" EntitySet="transactions" />
+      <End Role="invoices" EntitySet="invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project__categor__33D4B598" Association="Self.FK__project__categor__33D4B598">
+      <End Role="categories" EntitySet="categories" />
+      <End Role="project" EntitySet="project" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project__employe__32E0915F" Association="Self.FK__project__employe__32E0915F">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="project" EntitySet="project" />
+    </AssociationSet>
+    <AssociationSet Name="FK__propertie__subCa__300424B4" Association="Self.FK__propertie__subCa__300424B4">
+      <End Role="subCategories" EntitySet="subCategories" />
+      <End Role="properties" EntitySet="properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__subCatego__categ__267ABA7A" Association="Self.FK__subCatego__categ__267ABA7A">
+      <End Role="categories" EntitySet="categories" />
+      <End Role="subCategories" EntitySet="subCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__transacti__custo__37A5467C" Association="Self.FK__transacti__custo__37A5467C">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__transacti__emplo__36B12243" Association="Self.FK__transacti__emplo__36B12243">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__transacti__prope__38996AB5" Association="Self.FK__transacti__prope__38996AB5">
+      <End Role="properties" EntitySet="properties" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
